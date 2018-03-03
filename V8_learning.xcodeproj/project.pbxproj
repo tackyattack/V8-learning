@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02765270204A4FEF00D5E14F /* libv8_libbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02765267204A4FEF00D5E14F /* libv8_libbase.a */; };
+		02765271204A4FEF00D5E14F /* libv8_base.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02765268204A4FEF00D5E14F /* libv8_base.a */; };
+		02765272204A4FEF00D5E14F /* libv8_external_snapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02765269204A4FEF00D5E14F /* libv8_external_snapshot.a */; };
+		02765273204A4FEF00D5E14F /* libv8_init.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0276526A204A4FEF00D5E14F /* libv8_init.a */; };
+		02765274204A4FEF00D5E14F /* libv8_libplatform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0276526B204A4FEF00D5E14F /* libv8_libplatform.a */; };
+		02765275204A4FEF00D5E14F /* libv8_libsampler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0276526C204A4FEF00D5E14F /* libv8_libsampler.a */; };
+		02765276204A4FEF00D5E14F /* libv8_nosnapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0276526D204A4FEF00D5E14F /* libv8_nosnapshot.a */; };
+		02765277204A4FEF00D5E14F /* libv8_initializers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0276526E204A4FEF00D5E14F /* libv8_initializers.a */; };
+		02765278204A4FEF00D5E14F /* libv8_snapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0276526F204A4FEF00D5E14F /* libv8_snapshot.a */; };
+		0276527B204A508300D5E14F /* libicui18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02765279204A508300D5E14F /* libicui18n.a */; };
+		0276527C204A508300D5E14F /* libicuuc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0276527A204A508300D5E14F /* libicuuc.a */; };
+		0276527E204A50A700D5E14F /* libinspector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0276527D204A50A700D5E14F /* libinspector.a */; };
 		02FCC9F0204A43A800BB798E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02FCC9EF204A43A800BB798E /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,8 +35,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02765267204A4FEF00D5E14F /* libv8_libbase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_libbase.a; path = v8/out.gn/x64.release/obj/libv8_libbase.a; sourceTree = "<group>"; };
+		02765268204A4FEF00D5E14F /* libv8_base.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_base.a; path = v8/out.gn/x64.release/obj/libv8_base.a; sourceTree = "<group>"; };
+		02765269204A4FEF00D5E14F /* libv8_external_snapshot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_external_snapshot.a; path = v8/out.gn/x64.release/obj/libv8_external_snapshot.a; sourceTree = "<group>"; };
+		0276526A204A4FEF00D5E14F /* libv8_init.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_init.a; path = v8/out.gn/x64.release/obj/libv8_init.a; sourceTree = "<group>"; };
+		0276526B204A4FEF00D5E14F /* libv8_libplatform.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_libplatform.a; path = v8/out.gn/x64.release/obj/libv8_libplatform.a; sourceTree = "<group>"; };
+		0276526C204A4FEF00D5E14F /* libv8_libsampler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_libsampler.a; path = v8/out.gn/x64.release/obj/libv8_libsampler.a; sourceTree = "<group>"; };
+		0276526D204A4FEF00D5E14F /* libv8_nosnapshot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_nosnapshot.a; path = v8/out.gn/x64.release/obj/libv8_nosnapshot.a; sourceTree = "<group>"; };
+		0276526E204A4FEF00D5E14F /* libv8_initializers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_initializers.a; path = v8/out.gn/x64.release/obj/libv8_initializers.a; sourceTree = "<group>"; };
+		0276526F204A4FEF00D5E14F /* libv8_snapshot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8_snapshot.a; path = v8/out.gn/x64.release/obj/libv8_snapshot.a; sourceTree = "<group>"; };
+		02765279204A508300D5E14F /* libicui18n.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libicui18n.a; path = v8/out.gn/x64.release/obj/third_party/icu/libicui18n.a; sourceTree = "<group>"; };
+		0276527A204A508300D5E14F /* libicuuc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libicuuc.a; path = v8/out.gn/x64.release/obj/third_party/icu/libicuuc.a; sourceTree = "<group>"; };
+		0276527D204A50A700D5E14F /* libinspector.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libinspector.a; path = v8/out.gn/x64.release/obj/src/inspector/libinspector.a; sourceTree = "<group>"; };
 		02FCC9EC204A43A800BB798E /* V8_learning */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = V8_learning; sourceTree = BUILT_PRODUCTS_DIR; };
 		02FCC9EF204A43A800BB798E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		02FCC9F7204A43CB00BB798E /* d8.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = d8.o; path = ../v8/out.gn/x64.release/obj/d8/d8.o; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +57,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02765270204A4FEF00D5E14F /* libv8_libbase.a in Frameworks */,
+				02765271204A4FEF00D5E14F /* libv8_base.a in Frameworks */,
+				02765272204A4FEF00D5E14F /* libv8_external_snapshot.a in Frameworks */,
+				02765273204A4FEF00D5E14F /* libv8_init.a in Frameworks */,
+				02765274204A4FEF00D5E14F /* libv8_libplatform.a in Frameworks */,
+				02765275204A4FEF00D5E14F /* libv8_libsampler.a in Frameworks */,
+				02765276204A4FEF00D5E14F /* libv8_nosnapshot.a in Frameworks */,
+				02765277204A4FEF00D5E14F /* libv8_initializers.a in Frameworks */,
+				02765278204A4FEF00D5E14F /* libv8_snapshot.a in Frameworks */,
+				0276527B204A508300D5E14F /* libicui18n.a in Frameworks */,
+				0276527C204A508300D5E14F /* libicuuc.a in Frameworks */,
+				0276527E204A50A700D5E14F /* libinspector.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +80,7 @@
 			children = (
 				02FCC9EE204A43A800BB798E /* V8_learning */,
 				02FCC9ED204A43A800BB798E /* Products */,
+				02FCC9F6204A43CB00BB798E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +98,26 @@
 				02FCC9EF204A43A800BB798E /* main.cpp */,
 			);
 			path = V8_learning;
+			sourceTree = "<group>";
+		};
+		02FCC9F6204A43CB00BB798E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0276527D204A50A700D5E14F /* libinspector.a */,
+				02765279204A508300D5E14F /* libicui18n.a */,
+				0276527A204A508300D5E14F /* libicuuc.a */,
+				02765268204A4FEF00D5E14F /* libv8_base.a */,
+				02765269204A4FEF00D5E14F /* libv8_external_snapshot.a */,
+				0276526A204A4FEF00D5E14F /* libv8_init.a */,
+				0276526E204A4FEF00D5E14F /* libv8_initializers.a */,
+				02765267204A4FEF00D5E14F /* libv8_libbase.a */,
+				0276526B204A4FEF00D5E14F /* libv8_libplatform.a */,
+				0276526C204A4FEF00D5E14F /* libv8_libsampler.a */,
+				0276526D204A4FEF00D5E14F /* libv8_nosnapshot.a */,
+				0276526F204A4FEF00D5E14F /* libv8_snapshot.a */,
+				02FCC9F7204A43CB00BB798E /* d8.o */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +291,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/v8/include";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/v8/out.gn/x64.release/obj",
+					"$(PROJECT_DIR)/v8/out.gn/x64.release/obj/third_party/icu",
+					"$(PROJECT_DIR)/v8/out.gn/x64.release/obj/src/inspector",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -241,6 +306,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/v8/include";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/v8/out.gn/x64.release/obj",
+					"$(PROJECT_DIR)/v8/out.gn/x64.release/obj/third_party/icu",
+					"$(PROJECT_DIR)/v8/out.gn/x64.release/obj/src/inspector",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
