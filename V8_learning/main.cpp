@@ -17,16 +17,22 @@
 #include "libplatform/libplatform.h"
 #include "v8.h"
 
-static int x = 100;
+// The JavaScript to be run
+char scriptst[] = "print(\"Hello World!\"); x";
 
-static void XGetter(v8::Local<v8::String> property, const v8::PropertyCallbackInfo<v8::Value>& info)
+static int x = 100; // sample global variable
+
+static void XGetter(v8::Local<v8::String> property,
+                    const v8::PropertyCallbackInfo<v8::Value>& info)
 {
     info.GetReturnValue().Set(x);
 }
 
 // NOTE: The wiki has the PropertyCallbackInfo<xxx> wrong
 //       it should be "void", not "Value"
-static void XSetter(v8::Local<v8::String> property, v8::Local<v8::Value> value, const v8::PropertyCallbackInfo<void>& info)
+static void XSetter(v8::Local<v8::String> property,
+                    v8::Local<v8::Value> value,
+                    const v8::PropertyCallbackInfo<void>& info)
 {
     x = value->Int32Value();
 }
@@ -80,14 +86,16 @@ int main(int argc, char* argv[]) {
         // I.e. objects that can be accessed anywhere in the script
         v8::Local<v8::ObjectTemplate> global = v8::ObjectTemplate::New(isolate);
         
-        // Setup the print function in the global space
+        // setup the print function in the global space
         global->Set(
                     v8::String::NewFromUtf8(isolate, "print", v8::NewStringType::kNormal)
                     .ToLocalChecked(),
                     v8::FunctionTemplate::New(isolate, printCallback));
         
-        //
-        global->SetAccessor(v8::String::NewFromUtf8(isolate, "x", v8::NewStringType::kNormal).ToLocalChecked(), XGetter, XSetter);
+        // setup the getter and setter for global variable x
+        global->SetAccessor(v8::String::NewFromUtf8(isolate, "x",
+                                                    v8::NewStringType::kNormal).ToLocalChecked(),
+                                                    XGetter, XSetter);
 
         
         
@@ -100,7 +108,6 @@ int main(int argc, char* argv[]) {
         v8::Context::Scope context_scope(context);
         
         // Create a string containing the JavaScript source code.
-        char scriptst[] = "print(\"Hello World!\"); x";
         v8::Local<v8::String> source =
         v8::String::NewFromUtf8(isolate, scriptst,
                                 v8::NewStringType::kNormal).ToLocalChecked();
@@ -108,12 +115,24 @@ int main(int argc, char* argv[]) {
         // Compile the source code.
         v8::Local<v8::Script> script = v8::Script::Compile(context, source).ToLocalChecked();
         
-        // Run the script to get the result.
-        v8::Local<v8::Value> result = script->Run(context).ToLocalChecked();
         
-        // Convert the result to an UTF8 string and print it.
-        v8::String::Utf8Value utf8(result);
-        printf("%s\n", *utf8);
+        // Run the script to get the result.
+        //v8::Local<v8::Value> result = script->Run(context).ToLocalChecked(); // this will crash out if there is exception
+        
+        v8::TryCatch trycatch(isolate);
+        v8::Local<v8::Value> result = script->Run();
+        if (result.IsEmpty())
+        {
+            v8::Local<v8::Value> exception = trycatch.Exception();
+            v8::String::Utf8Value exception_str(exception);
+            printf("Exception: %s\n", *exception_str);
+        }
+        else
+        {
+            // Convert the result to an UTF8 string and print it.
+            v8::String::Utf8Value utf8(result);
+            printf("%s\n", *utf8);
+        }
     }
     // Dispose the isolate and tear down V8.
     isolate->Dispose();
